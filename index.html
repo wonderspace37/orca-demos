@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0b0c" />
+    <title>ORCA · Scroll Demos</title>
+    <meta name="description" content="Four scroll-driven 3D landing-page concepts for the ORCA modular fixed-wing UAS." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      :root { --bg:#08090b; --fg:#eef1f4; --muted:#8a919c; --line:rgba(255,255,255,.1); --accent:#ff8a3d; }
+      body { background: var(--bg); color: var(--fg); font-family: 'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: clamp(28px, 7vw, 90px) clamp(22px, 5vw, 40px); }
+      header { margin-bottom: clamp(36px, 7vw, 72px); }
+      .eyebrow { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+      h1 { font-size: clamp(44px, 9vw, 104px); font-weight: 700; letter-spacing: -.03em; line-height: .96; margin: 18px 0 20px; }
+      .lede { color: var(--muted); font-size: clamp(16px, 1.6vw, 20px); max-width: 54ch; line-height: 1.55; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 2vw, 22px); }
+      @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+      .card { position: relative; display: block; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 14px; padding: clamp(22px, 3vw, 34px); background: #0e1013; transition: transform .35s cubic-bezier(.16,.8,.3,1), border-color .35s, background .35s; overflow: hidden; }
+      .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.28); background: #121519; }
+      .card .num { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+      .card h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 600; letter-spacing: -.01em; margin: 14px 0 8px; }
+      .card p { color: var(--muted); font-size: 15px; line-height: 1.5; max-width: 34ch; }
+      .card .swatch { display: flex; gap: 6px; margin-top: 20px; }
+      .card .swatch span { width: 22px; height: 8px; border-radius: 2px; }
+      .card .go { position: absolute; top: clamp(22px,3vw,34px); right: clamp(22px,3vw,34px); font-family:'Space Mono',monospace; font-size: 13px; color: var(--muted); transition: color .3s, transform .3s; }
+      .card:hover .go { color: var(--fg); transform: translateX(3px); }
+      footer { margin-top: clamp(36px, 6vw, 64px); color: var(--muted); font-size: 13px; font-family:'Space Mono',monospace; letter-spacing:.04em; line-height: 1.7; }
+      footer a { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <span class="eyebrow">ORCA · Modular Fixed-Wing UAS</span>
+        <h1>Four ways<br />to fly it.</h1>
+        <p class="lede">The same aircraft, four scroll-driven concepts. Real-time WebGL — the model turns as you scroll, lit and finished four different ways. Pick a direction.</p>
+      </header>
+
+      <div class="grid">
+        <a class="card" href="./blacksite/">
+          <span class="go">enter →</span>
+          <span class="num">01 · TACTICAL</span>
+          <h2>Blacksite</h2>
+          <p>Dark gunmetal airframe, monospace telemetry HUD, scanlines and reticle. Defense-startup energy.</p>
+          <span class="swatch"><span style="background:#0a0b0c"></span><span style="background:#a39c63"></span><span style="background:#ff8a3d"></span></span>
+        </a>
+        <a class="card" href="./cleanroom/">
+          <span class="go">enter →</span>
+          <span class="num">02 · AEROSPACE</span>
+          <h2>Cleanroom</h2>
+          <p>Glossy white product studio, blue accents, big clean type. Apple-meets-Skydio restraint.</p>
+          <span class="swatch"><span style="background:#eef1f4"></span><span style="background:#1e63ff"></span><span style="background:#0a0c10"></span></span>
+        </a>
+        <a class="card" href="./blueprint/">
+          <span class="go">enter →</span>
+          <span class="num">03 · SCHEMATIC</span>
+          <h2>Blueprint</h2>
+          <p>Cyan-on-navy engineering drawing — graph grid, dimension callouts, a title block, backlit steel.</p>
+          <span class="swatch"><span style="background:#071a2f"></span><span style="background:#7fe7ff"></span><span style="background:#ffd24a"></span></span>
+        </a>
+        <a class="card" href="./hangar/">
+          <span class="go">enter →</span>
+          <span class="num">04 · CINEMATIC</span>
+          <h2>Night Hangar</h2>
+          <p>A reveal in the dark — dark metal catching a single warm key, heavy vignette, film grain.</p>
+          <span class="swatch"><span style="background:#050506"></span><span style="background:#ff8a3d"></span><span style="background:#6fa8ff"></span></span>
+        </a>
+      </div>
+
+      <footer>
+        Built from the ORCA CAD · real-time three.js / React Three Fiber<br />
+        Best on desktop — scroll to orbit the aircraft.
+      </footer>
+    </div>
+  </body>
+</html>
